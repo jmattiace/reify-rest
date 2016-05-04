@@ -1,0 +1,38 @@
+<form class="form-inline" method="GET" action="/admin/users_search">
+    <input class="form-control" name="firstName" type="text" placeholder="First Name"/>
+    <input class="form-control" name="lastName" type="text" placeholder="Last Name"/>
+    <input class="btn btn-default" type="submit" value="Search"/>
+</form>
+
+<h1>Search Results - {{ users.length }} results</h1>
+
+<table class="table">
+    <tr>
+        <th>User ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Api Key</th>
+        <th>Orders</th>
+    </tr>
+
+    {{#each users}}
+    <tr>
+        <td>{{ this.id }}</td>
+        <td>{{ this.firstName }}</td>
+        <td>{{ this.lastName }}</td>
+        <td>{{ this.email }}</td>
+        <td>
+          {{#if this.apiKey }}
+          {{ this.apiKey }}
+          {{else}}
+          <form method="post" action="/admin/users/{{ this.id }}/generate_api_key">
+            <input type="hidden" name="user-email" value="{{ this.email }}"/>
+            <button type="submit" class="btn btn-default">Generate Api Key</button>
+          </form>
+          {{/if}}
+        </td>
+        <td><a href="/admin/users/{{ this.id }}/orders" target="_blank">Orders</a></td>
+    </tr>
+    {{/each}}
+</table>

@@ -1,0 +1,54 @@
+<div class="menu-container">
+    <div class="inner-container">
+        <div class="new-logo-container">
+            <img class="logo" src="/assets/common/logo.png"/>
+        </div>
+
+        <div class="menu-item-container">
+            <a href="/dashboard/current_orders" class="menu-item">My Closet</a><span>&ndash;</span>
+            <a href="/dashboard/shirt_measurements" class="menu-item">My Measurements</a><span>&ndash;</span>
+            <a href="/dashboard/account" class="menu-item menu-item-selected">My Account</a><span>&ndash;</span>
+            <a href="/dashboard/extension" class="menu-item">My Extension</a>
+        </div>
+    </div>
+</div>
+
+<div id="new-signup-main-container">
+    <div class="signup-form">
+        <form action="/dashboard/account" method="POST">
+            <div class="fields-row">
+                {{> input_half name="firstName" placeholder="First Name" error=errors.firstName value=values.firstName }}
+
+                {{> input_half name="lastName" placeholder="Last Name" error=errors.lastName value=values.lastName }}
+            </div>
+
+            <div class="fields-row">
+                {{> input_half name="email" placeholder="Email" error=errors.email value=values.email }}
+
+                {{> input_half name="phoneNumber" placeholder="(xxx) xxx-xxxx" error=errors.phoneNumber value=values.phoneNumber}}
+            </div>
+
+            <div class="fields-divider">
+                <img class="crosshatch-image" src="/assets/crosshatch_colored.png"/>
+            </div>
+
+            <div class="fields-row">
+                {{> input_half name="streetAddress1" placeholder="Address" error=errors.streetAddress1 value=values.streetAddress1 }}
+
+                {{> input_half name="streetAddress2" placeholder="Address (line 2)" error=errors.streetAddress2 value=values.streetAddress2 }}
+            </div>
+
+            <div class="fields-row">
+                {{> input_half name="city" placeholder="City" error=errors.city value=values.city }}
+
+                {{> input_quarter name="state" placeholder="State" error=errors.state value=values.state }}
+
+                {{> input_quarter name="zipCode" placeholder="Zip Code" error=errors.zipCode value=values.zipCode }}
+            </div>
+
+            <div class="fields-row">
+                <input type="submit" class="new-action-button" value="UPDATE"></input>
+            </div>
+        </form>
+    </div>
+</div>

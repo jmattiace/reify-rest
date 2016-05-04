@@ -1,0 +1,37 @@
+<div class="menu-container">
+    <div class="inner-container">
+        <div class="new-logo-container">
+            <img class="logo" src="/assets/common/logo.png"/>
+        </div>
+
+        <div class="menu-item-container">
+            <a href="/dashboard/current_orders" class="menu-item menu-item-selected">My Closet</a><span>&ndash;</span>
+            <a href="/dashboard/shirt_measurements" class="menu-item">My Measurements</a><span>&ndash;</span>
+            <a href="/dashboard/account" class="menu-item">My Account</a><span>&ndash;</span>
+            <a href="/dashboard/extension" class="menu-item">My Extension</a>
+        </div>
+    </div>
+</div>
+
+<div id="closet-container">
+    <div id="closet-container-inner">
+        <h1 class="inner-header"><span class="user-name">{{ user.firstName }}'S</span> CLOSET</h1>
+
+        <div class="inner-submenu">
+            <div class="inner-submenu-item">
+                <span onclick="window.location = '/dashboard/current_orders'">Current Orders</span>
+            </div>
+
+            <div class="inner-submenu-item selected">
+                <span onclick="window.location = '/dashboard/past_orders'">Past Orders</span>
+            </div>                    
+        </div>
+
+        <div class="closet-container-inner-empty-list">
+            <p class="empty-closet">You have no past orders</p>
+            <button class="start-shopping-button" onclick="window.location='https://www.nordstromrack.com/'">START SHOPPING</button>
+        </div>
+
+        <div style="clear: both;"></div>
+    </div>
+</div>

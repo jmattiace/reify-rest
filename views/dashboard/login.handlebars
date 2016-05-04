@@ -1,0 +1,38 @@
+<div class="menu-container">
+    <div class="inner-container">
+        <div class="new-logo-container">
+            <a href="/">
+                <img class="logo" src="/assets/common/logo.png"/>
+            </a>
+        </div>
+
+        <div class="menu-item-container">
+            <a class="menu-item" href="/">About</a><span>&mdash;</span>
+            <a class="menu-item" href="/shirt_measurements">Get Started</a><span>&mdash;</span>
+            <a class="menu-item menu-item-selected" href="/dashboard/login">Log In</a>
+        </div>
+    </div>
+</div>
+
+<div id="signup-main-container">
+    <div class="inner-container">
+        <div id="signup-fields-container">
+            <div class="signup-fields-inner-container">
+                <div class="signup-fields-title">WELCOME BACK!</div>
+                <form action="/dashboard/login" method="POST">
+                    <div class="signup-fields-row centered two">
+                        {{> input name="email" placeholder="Email" error=errors.email value=values.email }}
+                    </div>
+
+                    <div class="signup-fields-row centered two">
+                        {{> password name="password" placeholder="Password" error=errors.password value=values.password }}
+                    </div>
+
+                    <div class="signup-fields-row centered two">
+                        <button class="new-action-button" type="submit">Log In</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

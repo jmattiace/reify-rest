@@ -1,0 +1,126 @@
+<div class="menu-container">
+    <div class="inner-container">
+        <div class="new-logo-container">
+            <img class="logo" src="/assets/common/logo.png"/>
+        </div>
+
+        <div class="menu-item-container">
+            <a href="/dashboard/current_orders" class="menu-item menu-item-selected">My Closet</a><span>&ndash;</span>
+            <a href="/dashboard/shirt_measurements" class="menu-item">My Measurements</a><span>&ndash;</span>
+            <a href="/dashboard/account" class="menu-item">My Account</a><span>&ndash;</span>
+            <a href="/dashboard/extension" class="menu-item">My Extension</a>
+        </div>
+    </div>
+</div>
+
+<div id="closet-container">
+    <div id="closet-container-inner">
+        <h1 class="inner-header"><span class="user-name">{{ user.firstName }}'S</span> CLOSET</h1>
+
+        <div class="inner-submenu">
+            <div class="inner-submenu-item {{#if isCurrent}}selected{{/if}}">
+                <span onclick="window.location = '/dashboard/current_orders'">Current Orders</span>
+            </div>
+
+            <div class="inner-submenu-item {{#if isPast}}selected{{/if}}">
+                <span onclick="window.location = '/dashboard/past_orders'">Past Orders</span>
+            </div>                    
+        </div>
+        
+        {{#each orderDetails}}    
+        <div class="closet-container-inner-list">
+            <div class="closet-container-inner-list-header">
+                <div class="header-item">
+                    <p class="header-item-top">ORDER PLACED</p>
+                    <p class="header-item-bottom">{{ this.orderPlaced }}</p>
+                </div>
+
+                <div class="header-item">
+                    <p class="header-item-top">ORDER NUMBER</p>
+                    <p class="header-item-bottom">{{ this.orderNumber }}</p> 
+                </div>
+
+                <div class="header-item">
+                    <p class="header-item-top">PRODUCT ID</p>
+                    <p class="header-item-bottom">{{ this.productId }}</p> 
+                </div>
+            </div>
+
+            <div class="closet-container-inner-list-body">
+                <div class="closet-container-inner-list-item">
+                    <div class="closet-container-inner-list-item-photo-container">
+                        <img src="{{ this.orderUrl }}">
+                    </div>
+
+                    <div class="closet-container-inner-list-item-right">
+                        <div class="closet-container-inner-list-item-description">
+                            <p class="product-title">{{ this.orderTitle }}</p>
+                            <p class="product-description">{{ this.orderDescription }}</p>
+                            <p class="product-total {{#if this.isInactive}}pending{{/if}}">Hemmingway Total: {{ this.orderAmount }}</p>
+                        </div>
+
+                        <button class="details-button">VIEW DETAILS</button>
+
+                        <div style="clear:both;"></div>
+
+                        <div class="closet-container-details-container">
+                            <div class="closet-container-inner-list-item-status">
+                                <p class="order-status">Order Status</p>
+                                <div class="status-image {{ this.orderStatus.stage }}"></div>
+                                <div class="status-image">
+                                    <div class="status-container">
+                                        <p class="status-label {{#if this.orderStatus.receive.isCompleted}}completed{{/if}}">{{ this.orderStatus.receive.label }}</p>
+                                        <p class="status-date">{{ this.orderStatus.receive.date }}</p>
+                                    </div>
+                                    <div class="status-container">
+                                        <p class="status-label {{#if this.orderStatus.analyze.isCompleted}}completed{{/if}}">{{ this.orderStatus.analyze.label }}</p>
+                                        <p class="status-date">{{ this.orderStatus.analyze.date }}</p>
+                                    </div>
+                                    <div class="status-container">
+                                        <p class="status-label {{#if this.orderStatus.alter.isCompleted}}completed{{/if}}">{{ this.orderStatus.alter.label }}</p>
+                                        <p class="status-date">{{ this.orderStatus.alter.date }}</p>
+                                    </div>
+                                    <div class="status-container">
+                                        <p class="status-label {{#if this.orderStatus.ship.isCompleted}}completed{{/if}}">{{ this.orderStatus.ship.label }}</p>
+                                        <p class="status-date">{{ this.orderStatus.ship.date }}</p>
+                                    </div>
+                                    <div class="status-container">
+                                        <p class="status-label {{#if this.orderStatus.deliver.isCompleted}}completed{{/if}}">{{ this.orderStatus.deliver.label }}</p>
+                                        <p class="status-date">{{ this.orderStatus.deliver.date }}</p>
+                                    </div>
+                                </div>
+                                <div style="clear:both;"></div>
+                            </div>
+
+                            <div class="closet-container-inner-list-item-billing">
+                                <p class="billing-title">{{ this.billingTitle }}</p>
+                                <div class="billing-calc">
+                                    <img class="icon" src="{{ this.productTypeIconUrl }}"/>
+                                    <span class="calc-left">{{ this.orderQuantity}} <span {{#if this.isInactive}}class="pending"{{/if}}>{{ this.formattedOrderPrice }}</span></span>
+                                    <span class="calc-right {{#if this.isInactive}}pending{{/if}}">{{ this.formattedOrderTotal }}</span>
+                                </div>
+                            </div>
+
+                            <div style="clear:both;"></div>
+
+                            {{#if this.hasAlterationDetails}}
+                                <div class="closet-container-inner-list-item-alteration-details">
+                                    <p class="alteration-title">Alteration Detail</p>
+                                    <p class="alteration-detail">
+                                        {{ this.alterationInformation }}
+                                    </p>
+                                </div>
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script src="/scripts/current_orders.js"></script>
