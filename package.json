@@ -1,6 +1,6 @@
 {
-  "name": "hemmingway-rest",
-  "description": "REST server that powers Hemmingway",
+  "name": "reify-rest",
+  "description": "REST server that powers Reify",
   "version": "0.0.1",
   "private": true,
   "dependencies": {

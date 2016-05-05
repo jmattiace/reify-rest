@@ -70,12 +70,6 @@ discover your package as it's listed in `npm search`.
 
 The url to the project homepage.
 
-**NOTE**: This is *not* the same as "url".  If you put a "url" field,
-then the registry will think it's a redirection to your package that has
-been published somewhere else, and spit at you.
-
-Literally.  Spit.  I'm so not kidding.
-
 ## bugs
 
 The url to your project's issue tracker and / or the email address to which
@@ -206,6 +200,7 @@ Conversely, some files are always ignored:
 * `._*`
 * `npm-debug.log`
 * `.npmrc`
+* `node_modules`
 
 ## main
 
@@ -654,8 +649,8 @@ are capable of properly installing your program.  For example:
 
     { "engines" : { "npm" : "~1.0.20" } }
 
-Note that, unless the user has set the `engine-strict` config flag, this
-field is advisory only.
+Unless the user has set the `engine-strict` config flag, this
+field is advisory only will produce warnings when your package is installed as a dependency.
 
 ## engineStrict
 
@@ -756,7 +751,6 @@ npm will default some values based on package contents.
 * npm-config(1)
 * npm-config(7)
 * npm-help(1)
-* npm-faq(7)
 * npm-install(1)
 * npm-publish(1)
 * npm-uninstall(1)

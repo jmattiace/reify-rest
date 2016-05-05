@@ -9,8 +9,8 @@ var app = express();
 app.environment = environment;
 
 appLoader.loadApp(app, 'middlewares');
-appLoader.loadApp(app, 'controllers');
 appLoader.loadApp(app, 'admin_controllers');
+appLoader.loadApp(app, 'controllers');
 servicesLoader.loadServices(app);
 
 app.listen(process.env.PORT || 3000);

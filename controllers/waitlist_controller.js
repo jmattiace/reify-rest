@@ -9,10 +9,7 @@ module.exports = function (app) {
 
     app.post('/waitlist/save', function(req, res) {
         var userData = {
-            //'firstName': 'jay',
-            //lastName: 'bird',
-            //'phoneNumber': '1234567890',
-            'email': 'jbird1@g.com'
+            'email': req.body.email
         }
 
         async.auto({
