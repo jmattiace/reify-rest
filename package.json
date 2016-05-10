@@ -30,6 +30,7 @@
     "request": "~2.51.0"
   },
   "scripts": {
+    "start-prod": "NODE_ENV=production node app/app.js",
     "start": "node app/app.js",
     "debug": "node debug app/app.js"
   }
