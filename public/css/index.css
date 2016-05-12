@@ -1,5 +1,5 @@
 @import url(http://db.onlinewebfonts.com/c/0154950b1c393c2cdff9968ada35f3f6?family=TrumpGothicEastW01-Regular);
-
+@import url(http://db.onlinewebfonts.com/c/ac51ad8a36d5bab6da11d454bcd06561?family=Proxima+Nova);
 @font-face {
     font-family: "TrumpGothicEastW01-Regular";
     src: url("http://db.onlinewebfonts.com/t/0154950b1c393c2cdff9968ada35f3f6.eot");
@@ -8,6 +8,64 @@
     url("http://db.onlinewebfonts.com/t/0154950b1c393c2cdff9968ada35f3f6.woff") format("woff"),
     url("http://db.onlinewebfonts.com/t/0154950b1c393c2cdff9968ada35f3f6.ttf") format("truetype"),
     url("http://db.onlinewebfonts.com/t/0154950b1c393c2cdff9968ada35f3f6.svg#TrumpGothicEastW01-Regular") format("svg");
+}
+@font-face {font-family: "Proxima Nova";
+    src: url("http://db.onlinewebfonts.com/t/ac51ad8a36d5bab6da11d454bcd06561.eot");
+    src: url("http://db.onlinewebfonts.com/t/ac51ad8a36d5bab6da11d454bcd06561.eot?#iefix") format("embedded-opentype"),
+    url("http://db.onlinewebfonts.com/t/ac51ad8a36d5bab6da11d454bcd06561.woff2") format("woff2"),
+    url("http://db.onlinewebfonts.com/t/ac51ad8a36d5bab6da11d454bcd06561.woff") format("woff"),
+    url("http://db.onlinewebfonts.com/t/ac51ad8a36d5bab6da11d454bcd06561.ttf") format("truetype"),
+    url("http://db.onlinewebfonts.com/t/ac51ad8a36d5bab6da11d454bcd06561.svg#Proxima Nova") format("svg");
+}
+
+#joinField {
+    background-color: transparent;
+    border: solid #327b81 1px;
+    width: 20%;
+    font-family: "Proxima Nova";
+}
+
+#joinButton {
+    border: none;
+    margin-top:1%;
+    background-color:#327b81;
+    color:white;
+    opacity: .5;
+    font-family:"Proxima Nova";
+}
+
+#waitlist {
+    width:100%;
+    height:0%;
+    position: fixed;
+    text-align: center;
+    margin-left:57%;
+    text-align: left;
+    font-family:"Proxima Nova";
+    line-height: 1.25em;
+    font-size:1.5em;
+    margin-top:8%;
+
+}
+
+#lineImage {
+    margin-left:57%;
+    margin-top:5.5%;
+}
+
+#launchDate {
+    width:100%;
+    height:0%;
+    position: fixed;
+    text-align: center;
+    margin-top:1%;
+    margin-left:57%;
+    letter-spacing: 8px;
+    text-align: left;
+    font-family:TrumpGothicEastW01-Regular;
+    line-height: 1.25em;
+    font-size:2.5em;
+
 }
 
 #reifyLogo {
@@ -19,6 +77,21 @@
     font-family: TrumpGothicEastW01-Regular;
     letter-spacing: 6.17px;
     font-size: 12.5em;
+    color:#327b81;
+    padding-right:9%;
+}
+
+#tagline {
+    width:100%;
+    height:0%;
+    position: fixed;
+    text-align: center;
+    padding-top:2%;
+    font-family:"Proxima Nova";
+    color:327b81;
+    font-size:1.5em;
+    margin-top:15%;
+    padding-right: 13%;
 }
 
 #topBox {
