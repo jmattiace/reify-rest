@@ -45,12 +45,17 @@
     line-height: 1.25em;
     font-size:1.5em;
     margin-top:8%;
+    /** temp CSS **/
+    left:-15px;
 
 }
 
 #lineImage {
-    margin-left:57%;
-    margin-top:5.5%;
+    /** margin-left:57%;
+    margin-top:5.5%; **/
+    /** temp css **/
+    margin-top: 4%;
+    margin-left: 56%;
 }
 
 #launchDate {
@@ -58,13 +63,17 @@
     height:0%;
     position: fixed;
     text-align: center;
-    margin-top:1%;
+    /*margin-top:1%;*/
     margin-left:57%;
     letter-spacing: 8px;
     text-align: left;
     font-family:TrumpGothicEastW01-Regular;
     line-height: 1.25em;
     font-size:2.5em;
+    /** temp css **/
+    margin-top: -39px;
+    left:-15px;
+
 
 }
 
@@ -79,6 +88,9 @@
     font-size: 12.5em;
     color:#327b81;
     padding-right:9%;
+    /** temp css **/
+    margin-top:-7px;
+    left:-90px;
 }
 
 #tagline {
@@ -92,6 +104,8 @@
     font-size:1.5em;
     margin-top:15%;
     padding-right: 13%;
+    /**temp css **/
+    left:-102px;
 }
 
 #topBox {
