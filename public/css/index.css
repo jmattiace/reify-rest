@@ -1,15 +1,30 @@
+@import url(http://db.onlinewebfonts.com/c/0154950b1c393c2cdff9968ada35f3f6?family=TrumpGothicEastW01-Regular);
+
+@font-face {
+    font-family: "TrumpGothicEastW01-Regular";
+    src: url("http://db.onlinewebfonts.com/t/0154950b1c393c2cdff9968ada35f3f6.eot");
+    src: url("http://db.onlinewebfonts.com/t/0154950b1c393c2cdff9968ada35f3f6.eot?#iefix") format("embedded-opentype"),
+    url("http://db.onlinewebfonts.com/t/0154950b1c393c2cdff9968ada35f3f6.woff2") format("woff2"),
+    url("http://db.onlinewebfonts.com/t/0154950b1c393c2cdff9968ada35f3f6.woff") format("woff"),
+    url("http://db.onlinewebfonts.com/t/0154950b1c393c2cdff9968ada35f3f6.ttf") format("truetype"),
+    url("http://db.onlinewebfonts.com/t/0154950b1c393c2cdff9968ada35f3f6.svg#TrumpGothicEastW01-Regular") format("svg");
+}
+
 #reifyLogo {
     width:100%;
     height:0%;
     position: fixed;
     text-align: center;
-    padding-top:10%;
+    padding-top:2%;
+    font-family: TrumpGothicEastW01-Regular;
+    letter-spacing: 6.17px;
+    font-size: 12.5em;
 }
 
 #topBox {
     background-color: white;
     width:100%;
-    height:25%;
+    height:20%;
     position: fixed;
     top: 0;
     left: 0;
