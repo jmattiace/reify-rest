@@ -12,9 +12,9 @@ var def = {
 };
 
 var production = {
-    host: 'ds051953.mongolab.com',
-    port: 51953,
-    db: 'hemmingway-rest',
+    host: 'ds031641.mongolab.com',
+    port: 31641,
+    db: 'reify',
     username: 'hemmingway',
     password: 'NJYqKePe'
 };
