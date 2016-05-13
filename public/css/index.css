@@ -1,21 +1,21 @@
-@import url(http://db.onlinewebfonts.com/c/0154950b1c393c2cdff9968ada35f3f6?family=TrumpGothicEastW01-Regular);
-@import url(http://db.onlinewebfonts.com/c/ac51ad8a36d5bab6da11d454bcd06561?family=Proxima+Nova);
+@import url(https://db.onlinewebfonts.com/c/0154950b1c393c2cdff9968ada35f3f6?family=TrumpGothicEastW01-Regular);
+@import url(https://db.onlinewebfonts.com/c/ac51ad8a36d5bab6da11d454bcd06561?family=Proxima+Nova);
 @font-face {
     font-family: "TrumpGothicEastW01-Regular";
-    src: url("http://db.onlinewebfonts.com/t/0154950b1c393c2cdff9968ada35f3f6.eot");
-    src: url("http://db.onlinewebfonts.com/t/0154950b1c393c2cdff9968ada35f3f6.eot?#iefix") format("embedded-opentype"),
-    url("http://db.onlinewebfonts.com/t/0154950b1c393c2cdff9968ada35f3f6.woff2") format("woff2"),
-    url("http://db.onlinewebfonts.com/t/0154950b1c393c2cdff9968ada35f3f6.woff") format("woff"),
-    url("http://db.onlinewebfonts.com/t/0154950b1c393c2cdff9968ada35f3f6.ttf") format("truetype"),
-    url("http://db.onlinewebfonts.com/t/0154950b1c393c2cdff9968ada35f3f6.svg#TrumpGothicEastW01-Regular") format("svg");
+    src: url("https://db.onlinewebfonts.com/t/0154950b1c393c2cdff9968ada35f3f6.eot");
+    src: url("https://db.onlinewebfonts.com/t/0154950b1c393c2cdff9968ada35f3f6.eot?#iefix") format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/0154950b1c393c2cdff9968ada35f3f6.woff2") format("woff2"),
+    url("https://db.onlinewebfonts.com/t/0154950b1c393c2cdff9968ada35f3f6.woff") format("woff"),
+    url("https://db.onlinewebfonts.com/t/0154950b1c393c2cdff9968ada35f3f6.ttf") format("truetype"),
+    url("https://db.onlinewebfonts.com/t/0154950b1c393c2cdff9968ada35f3f6.svg#TrumpGothicEastW01-Regular") format("svg");
 }
 @font-face {font-family: "Proxima Nova";
-    src: url("http://db.onlinewebfonts.com/t/ac51ad8a36d5bab6da11d454bcd06561.eot");
-    src: url("http://db.onlinewebfonts.com/t/ac51ad8a36d5bab6da11d454bcd06561.eot?#iefix") format("embedded-opentype"),
-    url("http://db.onlinewebfonts.com/t/ac51ad8a36d5bab6da11d454bcd06561.woff2") format("woff2"),
-    url("http://db.onlinewebfonts.com/t/ac51ad8a36d5bab6da11d454bcd06561.woff") format("woff"),
-    url("http://db.onlinewebfonts.com/t/ac51ad8a36d5bab6da11d454bcd06561.ttf") format("truetype"),
-    url("http://db.onlinewebfonts.com/t/ac51ad8a36d5bab6da11d454bcd06561.svg#Proxima Nova") format("svg");
+    src: url("https://db.onlinewebfonts.com/t/ac51ad8a36d5bab6da11d454bcd06561.eot");
+    src: url("https://db.onlinewebfonts.com/t/ac51ad8a36d5bab6da11d454bcd06561.eot?#iefix") format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/ac51ad8a36d5bab6da11d454bcd06561.woff2") format("woff2"),
+    url("https://db.onlinewebfonts.com/t/ac51ad8a36d5bab6da11d454bcd06561.woff") format("woff"),
+    url("https://db.onlinewebfonts.com/t/ac51ad8a36d5bab6da11d454bcd06561.ttf") format("truetype"),
+    url("https://db.onlinewebfonts.com/t/ac51ad8a36d5bab6da11d454bcd06561.svg#Proxima Nova") format("svg");
 }
 
 #joinField {
@@ -45,17 +45,11 @@
     line-height: 1.25em;
     font-size:1.5em;
     margin-top:8%;
-    /** temp CSS **/
-    left:-15px;
-
 }
 
 #lineImage {
-    /** margin-left:57%;
-    margin-top:5.5%; **/
-    /** temp css **/
-    margin-top: 4%;
-    margin-left: 56%;
+    margin-left:57%;
+    margin-top:5.5%;
 }
 
 #launchDate {
@@ -63,18 +57,13 @@
     height:0%;
     position: fixed;
     text-align: center;
-    /*margin-top:1%;*/
     margin-left:57%;
     letter-spacing: 8px;
     text-align: left;
     font-family:TrumpGothicEastW01-Regular;
     line-height: 1.25em;
     font-size:2.5em;
-    /** temp css **/
-    margin-top: -39px;
-    left:-15px;
-
-
+    margin-top:8px;
 }
 
 #reifyLogo {
@@ -88,9 +77,6 @@
     font-size: 12.5em;
     color:#327b81;
     padding-right:9%;
-    /** temp css **/
-    margin-top:-7px;
-    left:-90px;
 }
 
 #tagline {
@@ -104,8 +90,6 @@
     font-size:1.5em;
     margin-top:15%;
     padding-right: 13%;
-    /**temp css **/
-    left:-102px;
 }
 
 #topBox {
