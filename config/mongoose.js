@@ -15,7 +15,7 @@ var production = {
     host: 'ds031641.mongolab.com',
     port: 31641,
     db: 'reify',
-    username: 'hemmingway',
+    username: 'mongify',
     password: 'NJYqKePe'
 };
 
