@@ -7,11 +7,12 @@ module.exports = function (app) {
         res.send('waiting...');
     });
 
-    app.post('/waitlist/save', function(req, res) {
+    app.post('/waitlist', function(req, res) {
         var userData = {
             'email': req.body.email
         }
 
+        //Check if email already exists
         async.auto({
             waitlistUser: function (callback) {
                 app.models.WaitlistUser.findOne({ email: userData.email }, function (err, waitlistUser) {
@@ -23,8 +24,7 @@ module.exports = function (app) {
                         return app.models.WaitlistUser.create(userData, callback);
                     }
 
-                    callback(null, {errorMessage: userData.email + ' is are already on the waitlist! '
-                        + 'Please use a different email address to join the waitlist'});
+                    callback(null, {errOccurred: true});
                 });
             }
         }, function (err, results) {
@@ -33,16 +33,16 @@ module.exports = function (app) {
                 return res.send('an error occurred');
             }
 
-            if(results.waitlistUser && results.waitlistUser.errorMessage) {
-                return res.send(results);
+            if(results.waitlistUser && results.waitlistUser.errOccurred) {
+                return res.redirect('/?waitListed=false&email='+userData.email);
             }
 
             request({
                 method: 'POST',
                 uri: 'https://api.mailgun.net/v3/sandboxffcf2b7b67b448fdbf58b903adf14fef.mailgun.org/messages',
                 form: {
-                    from: 'Hemmingway@hemmingway.co',
-                    to: 'jason@hemmingway.co',
+                    from: 'info@reify.fit',
+                    to: 'jason@reify.fit',
                     'h:Reply-To': 'noreply@hemmingway.co',
                     subject: 'You\'re on the wait list!',
                     html: 'html goes here'
@@ -52,8 +52,8 @@ module.exports = function (app) {
                 }
             })
 
-            return res.send('Success');
-
+            console.log('Successfully added ' + userData.email + ' to the waitlist');
+            return res.redirect('/?waitListed=true&email='+userData.email);
         });
     });
 

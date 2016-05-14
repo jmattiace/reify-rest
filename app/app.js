@@ -13,5 +13,6 @@ appLoader.loadApp(app, 'admin_controllers');
 appLoader.loadApp(app, 'controllers');
 servicesLoader.loadServices(app);
 
-app.listen(process.env.PORT || 3000);
-console.log("Listening on port 3000");
+var port = process.env.PORT || 3000;
+app.listen(port);
+console.log("Listening on port " + port);
