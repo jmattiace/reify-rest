@@ -7,7 +7,7 @@ module.exports = function (app) {
         res.send('waiting...');
     });
 
-    app.post('/waitlist/save', function(req, res) {
+    app.post('/waitlist', function(req, res) {
         var userData = {
             'email': req.body.email
         }
@@ -23,8 +23,7 @@ module.exports = function (app) {
                         return app.models.WaitlistUser.create(userData, callback);
                     }
 
-                    callback(null, {errorMessage: userData.email + ' is are already on the waitlist! '
-                        + 'Please use a different email address to join the waitlist'});
+                    callback(null, {errOccurred: true});
                 });
             }
         }, function (err, results) {
@@ -33,8 +32,8 @@ module.exports = function (app) {
                 return res.send('an error occurred');
             }
 
-            if(results.waitlistUser && results.waitlistUser.errorMessage) {
-                return res.send(results);
+            if(results.waitlistUser && results.waitlistUser.errOccurred) {
+                return res.redirect('/?waitListed=false&email='+userData.email);
             }
 
             request({
@@ -52,8 +51,8 @@ module.exports = function (app) {
                 }
             })
 
-            return res.send('Success');
-
+            console.log('Successfully added ' + userData.email + ' to the waitlist');
+            return res.redirect('/?waitListed=true&email='+userData.email);
         });
     });
 
