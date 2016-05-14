@@ -1,0 +1,12 @@
+{{#if waitlisted }}
+    <form method="POST" action="/waitlist">
+        <p>{{ waitlisted }}</p>
+        <input id="joinField" type="email" name="email" placeholder="Your Email"><br>
+        <input id= "joinButton" type="submit" class="action-button" value="JOIN WAITLIST"/>
+    </form>
+{{else }}
+    <form method="POST" action="/waitlist">
+        <input id="joinField" type="email" name="email" placeholder="Your Email"><br>
+        <input id= "joinButton" type="submit" class="action-button" value="JOIN WAITLIST"/>
+    </form>
+{{/if}}
