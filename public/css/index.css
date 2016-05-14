@@ -22,7 +22,7 @@
 }
 
 #launchBox {
-    left: 105px;
+    left: 107px;
     bottom:80px;
 }
 
@@ -78,7 +78,7 @@
 
 #joinButton {
     border: none;
-    margin-top:1%;
+    margin-top:2%;
     background-color:#327b81;
     color:white;
     opacity: .5;
