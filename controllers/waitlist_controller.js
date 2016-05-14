@@ -12,6 +12,7 @@ module.exports = function (app) {
             'email': req.body.email
         }
 
+        //Check if email already exists
         async.auto({
             waitlistUser: function (callback) {
                 app.models.WaitlistUser.findOne({ email: userData.email }, function (err, waitlistUser) {
@@ -40,8 +41,8 @@ module.exports = function (app) {
                 method: 'POST',
                 uri: 'https://api.mailgun.net/v3/sandboxffcf2b7b67b448fdbf58b903adf14fef.mailgun.org/messages',
                 form: {
-                    from: 'Hemmingway@hemmingway.co',
-                    to: 'jason@hemmingway.co',
+                    from: 'info@reify.fit',
+                    to: 'jason@reify.fit',
                     'h:Reply-To': 'noreply@hemmingway.co',
                     subject: 'You\'re on the wait list!',
                     html: 'html goes here'
