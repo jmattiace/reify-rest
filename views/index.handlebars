@@ -1,19 +1,27 @@
-<div id="topBox">
-</div>
-<div>
-    <h1 id="reifyLogo">REIFY</h1>
-    <h4 id="tagline">make your perfect fit a reality</h4>
-    <div>
-        <img id="lineImage" src="assets/lineMedium.png">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div id="topBox"></div>
+        </div>
     </div>
-<div id= "launchDate">
-    <p>LAUNCHING<br>
-        06.01.2016
-    </p>
-</div>
-        <div id="waitlist">
-
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-4">
+            <p id="reifyLogo">REIFY</p>
+            <p id="tagLine">make your perfect fit a reality.</p>
+        </div>
+        <div class="col-sm-4">
+            <img id="lineSpec" src="assets/lineMedium.png">
+        </div>
+    </div>
+    <div class="row">
+        <div id="launchBox" class="col-sm-4 col-sm-offset-6">
+            <div id="launchInfo">
+                <p id="launchInfo">LAUNCHING</p>
+                <p id="launchInfo">06.01.2016</p>
+            </div>
             <!-- Render waitlist signup form -->
             {{> waitlist waitlisted=waitListRespMsg }}
         </div>
+    </div>
+
 </div>

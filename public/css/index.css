@@ -17,11 +17,62 @@
     url("https://db.onlinewebfonts.com/t/ac51ad8a36d5bab6da11d454bcd06561.ttf") format("truetype"),
     url("https://db.onlinewebfonts.com/t/ac51ad8a36d5bab6da11d454bcd06561.svg#Proxima Nova") format("svg");
 }
+.container-fluid {
+    padding: 0px;
+}
+
+#launchBox {
+    left: 105px;
+    bottom:80px;
+}
+
+#launchInfo {
+    letter-spacing: 8px;
+    text-align: left;
+    font-family: TrumpGothicEastW01-Regular;
+    line-height: 1em;
+    font-size: 1.5em;
+    margin-top: 8px;
+}
+
+#lineSpec {
+    position: relative;
+    top: -65px;
+    right:110px;
+}
+
+#tagLine {
+    text-align: center;
+    font-size: 1.5em;
+    position: relative;
+    top: -170px;
+    font-family: "Proxima Nova";
+    color:#327b81;
+    letter-spacing:6.17px;
+    letter-spacing: 0px;
+    right:50px;
+}
+
+#reifyLogo {
+    text-align: center;
+    font-size: 12.5em;
+    position: relative;
+    font-family: TrumpGothicEastW01-Regular;
+    color:#327b81;
+    letter-spacing:6.17px;
+    top: -119px;
+    right:25px;
+}
+
+#topBox {
+    background-color: white;
+    height: 115px;
+}
 
 #joinField {
     background-color: transparent;
     border: solid #327b81 1px;
-    width: 20%;
+    width: 70%;
     font-family: "Proxima Nova";
 }
 
@@ -32,74 +83,6 @@
     color:white;
     opacity: .5;
     font-family:"Proxima Nova";
-}
-
-#waitlist {
-    width:100%;
-    height:0%;
-    position: fixed;
-    text-align: center;
-    margin-left:57%;
-    text-align: left;
-    font-family:"Proxima Nova";
-    line-height: 1.25em;
-    font-size:1.5em;
-    margin-top:8%;
-}
-
-#lineImage {
-    margin-left:57%;
-    margin-top:5.5%;
-}
-
-#launchDate {
-    width:100%;
-    height:0%;
-    position: fixed;
-    text-align: center;
-    margin-left:57%;
-    letter-spacing: 8px;
-    text-align: left;
-    font-family:TrumpGothicEastW01-Regular;
-    line-height: 1.25em;
-    font-size:2.5em;
-    margin-top:8px;
-}
-
-#reifyLogo {
-    width:100%;
-    height:0%;
-    position: fixed;
-    text-align: center;
-    padding-top:2%;
-    font-family: TrumpGothicEastW01-Regular;
-    letter-spacing: 6.17px;
-    font-size: 12.5em;
-    color:#327b81;
-    padding-right:9%;
-}
-
-#tagline {
-    width:100%;
-    height:0%;
-    position: fixed;
-    text-align: center;
-    padding-top:2%;
-    font-family:"Proxima Nova";
-    color:327b81;
-    font-size:1.5em;
-    margin-top:15%;
-    padding-right: 13%;
-}
-
-#topBox {
-    background-color: white;
-    width:100%;
-    height:20%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
 }
 
 body{
