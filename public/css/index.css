@@ -37,20 +37,20 @@
 
 #lineSpec {
     position: relative;
-    top: -65px;
-    right:110px;
+    top: 56px;
+    left:12px;
 }
 
 #tagLine {
     text-align: center;
     font-size: 1.5em;
     position: relative;
-    top: -170px;
+    top: -200px;
     font-family: "Proxima Nova";
     color:#327b81;
     letter-spacing:6.17px;
     letter-spacing: 0px;
-    right:50px;
+    right:58px;
 }
 
 #reifyLogo {
