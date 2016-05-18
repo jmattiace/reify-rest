@@ -1,5 +1,7 @@
 var async = require('async');
 var request = require('request');
+var path = require("path");
+var fs   = require("fs");
 
 module.exports = function (app) {
 
@@ -37,20 +39,28 @@ module.exports = function (app) {
                 return res.redirect('/?waitListed=false&email='+userData.email);
             }
 
+            //Get html for email content
+            var publicPath = path.resolve(__dirname, "../public");
+            var htmlPath = path.join(publicPath, "email/waitlist-conf.html");
+            var html = fs.readFileSync(htmlPath, "utf8");
+
+            //Mailgun
             request({
                 method: 'POST',
-                uri: 'https://api.mailgun.net/v3/sandboxffcf2b7b67b448fdbf58b903adf14fef.mailgun.org/messages',
+                uri: 'https://api.mailgun.net/v3/reify.fit/messages',
                 form: {
-                    from: 'info@reify.fit',
-                    to: 'jason@reify.fit',
-                    'h:Reply-To': 'noreply@hemmingway.co',
+                    from: 'Reify <info@reify.fit>',
+                    to: [userData.email, 'jason@hemmingway.co'],
+                    //'recipient-variables': '{"'+userData.email+'": {"first":"newUser", "id":1}, "jason@hemmingway.co": {"first":"reify", "id": 2}}',
+                    'h:Reply-To': 'noreply@reify.fit',
                     subject: 'You\'re on the wait list!',
-                    html: 'html goes here'
+                    html: html
                 },
                 headers: {
                     Authorization: 'Basic ' + new Buffer('api:key-0a2523576d0095dee43244887fa7ee4b').toString('base64')
                 }
             })
+
 
             console.log('Successfully added ' + userData.email + ' to the waitlist');
             return res.redirect('/?waitListed=true&email='+userData.email);
