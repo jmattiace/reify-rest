@@ -5,12 +5,16 @@ var MeasurementsSchema = new mongoose.Schema({
     gender:      { type: String },
     height:      { type: String },
     weight:      { type: String },
-    pant_size:   { type: String },
-    hip:         { type: String },
+    neck:        { type: String },
+    shoulder:    { type: String },
+    chest:       { type: String },
+    sleeve:      { type: String },
+    shirt_fit_pref:   { type: String },
     waist:       { type: String },
     inseam:      { type: String },
     outseam:     { type: String },
-    thigh:       { type: String }
+    thigh:       { type: String },
+    pant_fit_pref:   { type: String },
 });
 
 module.exports = MeasurementsSchema;

@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container">
     <div class="page-header">
         <h1 id="manual-signup-heading">REIFY</h1>
     </div>
@@ -32,7 +32,7 @@
                 {{> input_text error=errors.addr2 value=values.addr2 }}
         </div>
         <div class="form-group">
-            <label for="city">State:</label>
+            <label for="city">City:</label>
             <input type="text" id="city" name="city" placeholder="Enter city"
             {{> input_text error=errors.city value=values.city }}
         </div>
@@ -75,6 +75,64 @@
             <label for="gender">Gender:</label>
             <input type="text" id="gender" name="gender" placeholder="Enter gender"
                 {{> input_text error=errors.gender value=values.gender }}
+        </div>
+        <div class="form-group">
+            <label for="neck">Neck:</label>
+            <input type="text" id="neck" name="neck" placeholder="Enter neck"
+            {{> input_text error=errors.neck value=values.neck }}
+        </div>
+        <div class="form-group">
+            <label for="shoulder">Shoulder:</label>
+            <input type="text" id="shoulder" name="shoulder" placeholder="Enter shoulder"
+            {{> input_text error=errors.shoulder value=values.shoulder }}
+        </div>
+        <div class="form-group">
+            <label for="chest">Chest:</label>
+            <input type="text" id="chest" name="chest" placeholder="Enter chest"
+            {{> input_text error=errors.chest value=values.chest }}
+        </div>
+        <div class="form-group">
+            <label for="sleeve">Sleeve:</label>
+            <input type="text" id="sleeve" name="sleeve" placeholder="Enter sleeve"
+            {{> input_text error=errors.sleeve value=values.sleeve }}
+        </div>
+        <div class="form-group">
+            <label for="shirt-fit-pref">Shirt fit preference:</label>
+            <select class="form-control" id="shirt-fit-pref" name="shirt-fit-pref">
+                <option>Classic</option>
+                <option>Regular</option>
+                <option>Slim</option>
+                <option>Extra slim</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="waist">Waist:</label>
+            <input type="text" id="waist" name="waist" placeholder="Enter waist"
+            {{> input_text error=errors.waist value=values.waist }}
+        </div>
+        <div class="form-group">
+            <label for="inseam">Inseam:</label>
+            <input type="text" id="inseam" name="inseam" placeholder="Enter inseam"
+            {{> input_text error=errors.inseam value=values.inseam }}
+        </div>
+        <div class="form-group">
+            <label for="outseam">Outseam:</label>
+            <input type="text" id="outseam" name="outseam" placeholder="Enter outseam"
+            {{> input_text error=errors.outseam value=values.outseam }}
+        </div>
+        <div class="form-group">
+            <label for="thigh">Thigh:</label>
+            <input type="text" id="thigh" name="thigh" placeholder="Enter thigh"
+            {{> input_text error=errors.thigh value=values.thigh }}
+        </div>
+        <div class="form-group">
+            <label for="pant-fit-pref">Pants fit preference:</label>
+            <select class="form-control" id="pant-fit-pref" name="pant-fit-pref">
+                <option>Relaxed</option>
+                <option>Straight</option>
+                <option>Slim</option>
+                <option>Skinny</option>
+            </select>
         </div>
 
         <button type="submit" class="btn btn-default">Submit</button>

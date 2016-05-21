@@ -37,9 +37,19 @@ module.exports = function (app) {
 
         //Ensure measurement fields are present
         var measFields = [
-          'height',
-          'weight',
-          'gender'
+            'height',
+            'weight',
+            'gender',
+            'neck',
+            'shoulder',
+            'chest',
+            'sleeve',
+            'shirt-fit-pref',
+            'waist',
+            'inseam',
+            'outseam',
+            'thigh',
+            'pant-fit-pref'
         ];
         _.each(measFields, function (field) {
             if (_.isEmpty(req.body[field])) {
@@ -71,12 +81,22 @@ module.exports = function (app) {
 
             },
             measurements: ['user', function (callback, results) {
-                var measData = _.pick(req.body,
-                    'gender',
-                    'weight',
-                    'height'
-                );
+                var measData = {};
                 measData.user_id = results.user.id;
+                measData.height = req.body['height'];
+                measData.weight = req.body['gender'];
+                measData.gender = req.body['gender'];
+                measData.neck = req.body['neck'];
+                measData.shoulder = req.body['shoulder'];
+                measData.chest = req.body['chest'];
+                measData.sleeve = req.body['sleeve'];
+                measData.shirt_fit_pref = req.body['shirt-fit-pref'];
+                measData.waist = req.body['waist'];
+                measData.inseam = req.body['inseam'];
+                measData.outseam = req.body['outseam'];
+                measData.thigh = req.body['thigh'];
+                measData.pant_fit_pref = req.body['pant-fit-pref'];
+
                 app.models.Measurements.create( measData, callback);
             }]
         }, function (err, results) {
@@ -84,10 +104,10 @@ module.exports = function (app) {
                 console.log("Error: " + err);
                 return res.send('An error occurred: '+ err);
             }
+
+            console.log("Successfully signed up " + req.body['email']);
+            res.render('manual_signup');
         });
 
-
-        console.log("Successfully signed up " + req.body['first-name']);
-        return res.render('manual_signup');
     });
 }
