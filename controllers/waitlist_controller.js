@@ -5,10 +5,6 @@ var fs   = require("fs");
 
 module.exports = function (app) {
 
-    app.get('/waitlist', function(req, res) {
-        res.send('waiting...');
-    });
-
     app.post('/waitlist', function(req, res) {
         var userData = {
             'email': req.body.email

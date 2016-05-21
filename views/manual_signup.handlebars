@@ -1,0 +1,82 @@
+<div class="container-fluid">
+    <div class="page-header">
+        <h1 id="manual-signup-heading">REIFY</h1>
+    </div>
+
+    <form role="form" method="POST" action="/user_signup">
+
+        <!-- Personal info -->
+        <div class="form-group">
+            <label for="first-name">First name:</label>
+            <input type="text" id="first-name" name="first-name" placeholder="Enter first name"
+                {{> input_text error=errors.first-name value=values.first-name }}
+        </div>
+        <div class="form-group">
+            <label for="last-name">Last name:</label>
+            <input type="text" id="last-name" name="last-name" placeholder="Enter last name"
+                {{> input_text error=errors.last-name value=values.last-name }}
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter email"
+                {{> input_text error=errors.email value=values.email }}
+        </div>
+        <div class="form-group">
+            <label for="addr1">Address line 1:</label>
+            <input type="text" id="addr1" name="addr1" placeholder="Enter address"
+                {{> input_text error=errors.addr1 value=values.addr1 }}
+        </div>
+        <div class="form-group">
+            <label for="addr2">Address line 2:</label>
+            <input type="text" id="addr2" name="addr2" placeholder="Enter address"
+                {{> input_text error=errors.addr2 value=values.addr2 }}
+        </div>
+        <div class="form-group">
+            <label for="city">State:</label>
+            <input type="text" id="city" name="city" placeholder="Enter city"
+            {{> input_text error=errors.city value=values.city }}
+        </div>
+        <div class="form-group">
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" placeholder="Enter state"
+                {{> input_text error=errors.state value=values.state }}
+        </div>
+        <div class="form-group">
+            <label for="zip">Zip:</label>
+            <input type="text" id="zip" name="zip" placeholder="Enter zip"
+                {{> input_text error=errors.zip value=values.zip }}
+        </div>
+        <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" id="pwd" name="pass" placeholder="Enter password"
+                {{> input_text error=errors.pass value=values.pass }}
+        </div>
+        <div class="form-group">
+            <label for="conf-pwd">Confirm password:</label>
+            <input type="password" id="conf-pwd" name="conf-pass" placeholder="Enter password"
+                {{> input_text error=errors.first-name value=values.conf_pass }}
+        </div>
+
+        <!-- Measurements -->
+        <div class="page-header">
+            <h3>Measurements</h3>
+        </div>
+        <div class="form-group">
+            <label for="height">Height:</label>
+            <input type="text" id="height" name="height" placeholder="Enter height"
+                {{> input_text error=errors.height value=values.height }}
+        </div>
+        <div class="form-group">
+            <label for="wieght">Weight:</label>
+            <input type="text" id="weight" name="weight"  placeholder="Enter weight"
+                {{> input_text error=errors.weight value=values.weight }}
+        </div>
+        <div class="form-group">
+            <label for="gender">Gender:</label>
+            <input type="text" id="gender" name="gender" placeholder="Enter gender"
+                {{> input_text error=errors.gender value=values.gender }}
+        </div>
+
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+</div>

@@ -95,3 +95,9 @@ body{
     background-position: center center;
     background-attachment: fixed;
 }
+
+#manual-signup-heading {
+    font-size: 9.5em;
+    font-family: TrumpGothicEastW01-Regular;
+    color:#327b81;
+}
