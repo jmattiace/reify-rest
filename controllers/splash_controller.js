@@ -26,5 +26,15 @@ module.exports = function (app) {
         res.render('faq');
     });
 
+    app.get('/splash', function(req, res) {
+
+        //Post email to waitlist endpoint
+        //OR
+        //Go to faq page
+        //OR
+        //Login
+        res.redirect('dashboard_controller/current_orders');
+    });
+
     return app;
 };

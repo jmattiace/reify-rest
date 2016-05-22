@@ -15,7 +15,7 @@ var UserSchema = new mongoose.Schema({
     city:     { type: String },
     state:    { type: String },
     email:       { type: String, unique: true, lowercase: true },
-    password:    { type: String, required: true },
+    password:    { type: String, required: true},
     apiKey:      { type: String, unique: true, sparse: true}
 });
 

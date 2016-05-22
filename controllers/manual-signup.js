@@ -8,7 +8,7 @@ module.exports = function (app) {
 
     app.get('/user_signup', function (req, res) {
 
-        res.render('manual_signup');
+        res.render('manual-signup');
     });
 
     app.post('/user_signup', function(req, res) {
@@ -59,7 +59,7 @@ module.exports = function (app) {
 
         //Return if errors were found
         if (!_.isEmpty(errors)) {
-            return res.render('manual_signup', {errors: errors, values: req.body});
+            return res.render('manual-signup', {errors: errors, values: req.body});
         }
 
         //Persist data
@@ -106,7 +106,7 @@ module.exports = function (app) {
             }
 
             console.log("Successfully signed up " + req.body['email']);
-            res.render('manual_signup');
+            res.render('manual-ignup');
         });
 
     });

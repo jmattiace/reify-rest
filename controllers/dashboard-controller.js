@@ -140,60 +140,6 @@ module.exports = function (app) {
         });
     });
 
-    app.get('/dashboard/extension', function (req, res) {
-        if (!req.user) {
-            return res.redirect('/dashboard/login');
-        }
-
-        res.render('dashboard/extension');
-    });
-
-    app.get('/dashboard/signed_up_extension', function (req, res) {
-        if (!req.user) {
-            return res.redirect('/dashboard/login');
-        }
-
-        if (req.session.temp_user_id) {
-            delete req.session.temp_user_id;
-        } else {
-            return res.redirect('/dashboard/extension');
-        }
-
-        //Confirmation email
-        request({
-            method: 'POST',
-            uri: 'https://api.mailgun.net/v3/sandboxffcf2b7b67b448fdbf58b903adf14fef.mailgun.org/messages',
-            form: {
-                from: 'Hemmingway@hemmingway.co',
-                to: req.user.email,
-                'h:Reply-To': 'noreply@hemmingway.co',
-                subject: 'Welcome to Hemmingway!',
-                html: 'html goes here'
-            },
-            headers: {
-                Authorization: 'Basic ' + new Buffer('api:key-0a2523576d0095dee43244887fa7ee4b').toString('base64')
-            }
-        })
-
-        //TODO remove this request when Allison no longer wants these emails
-        request({
-            method: 'POST',
-            uri: 'https://api.mailgun.net/v3/sandbox5c428136873843419e17ef69f1dd5e66.mailgun.org/messages',
-            form: {
-                from: 'allison@hemmingway.co',
-                to: 'allison@hemmingway.co',
-                'h:Reply-To': 'noreply@hemmingway.co',
-                subject: 'User signed up',
-                html: req.user.id
-            },
-            headers: {
-                Authorization: 'Basic ' + new Buffer('api:key-9e402520d0b4cbaf26cdffc3c7538b56').toString('base64')
-            }
-        })
-
-        res.render('dashboard/extension', { layout: 'facebook_sign_up_dashboard' });
-    });
-
     app.get('/dashboard/shirt_measurements', function (req, res) {
         if (!req.user) {
             return res.redirect('/dashboard/login');
