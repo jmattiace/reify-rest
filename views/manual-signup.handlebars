@@ -3,6 +3,14 @@
         <h1 id="manual-signup-heading">REIFY</h1>
     </div>
 
+    <!-- If this page is reloaded after user was successfully signed up, show success alert -->
+    {{#if success }}
+        <div class="alert alert-success">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <p>{{ success }}</p>
+        </div>
+    {{/if}}
+
     <form role="form" method="POST" action="/user_signup">
 
         <!-- Personal info -->

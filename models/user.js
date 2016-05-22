@@ -8,14 +8,16 @@ var UserSchema = new mongoose.Schema({
     firstName:   { type: String },
     lastName:    { type: String },
     phoneNumber: { type: String },
-    streetAddress1: { type: String },
-    streetAddress2: { type: String },
+    streetAddr1: { type: String },
+    streetAddr2: { type: String },
     country:  { type: String, default: 'US' },
-    zipCode:  { type: String },
+    zip:  { type: String },
     city:     { type: String },
     state:    { type: String },
     email:       { type: String, unique: true, lowercase: true },
     password:    { type: String, required: true},
+    resetPasswordToken: { type: String},
+    resetPasswordExpires: { type: Date},
     apiKey:      { type: String, unique: true, sparse: true}
 });
 

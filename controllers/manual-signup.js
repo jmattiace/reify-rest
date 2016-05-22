@@ -3,6 +3,7 @@
  */
 var _ = require('underscore');
 var async = require('async');
+var crypto = require('crypto');
 
 module.exports = function (app) {
 
@@ -64,22 +65,31 @@ module.exports = function (app) {
 
         //Persist data
         async.auto({
-            user: function (callback) {
+            token: function(callback) {
+                crypto.randomBytes(20, function(err, buf) {
+                    var token = buf.toString('hex');
+                    callback(err, token);
+                });
+            },
+            user: ['token', function (callback, results) {
 
                 var userData = {};
                 userData.firstName = req.body['first-name'];
                 userData.lastName = req.body['last-name'];
                 userData.email = req.body['email'];
-                userData.addr1 = req.body['addr1'];
-                userData.addr2 = req.body['addr2'];
+                userData.streetAddr1 = req.body['addr1'];
+                userData.streetAddr2 = req.body['addr2'];
                 userData.city = req.body['city'];
                 userData.state = req.body['state'];
                 userData.zip = req.body['zip'];
                 userData.password = req.body['pass'];
 
+                userData.resetPasswordToken = results.token;
+                userData.resetPasswordExpires = Date.now() + 31536000000; // 1 year
+
                 app.models.User.create(userData, callback);
 
-            },
+            }],
             measurements: ['user', function (callback, results) {
                 var measData = {};
                 measData.user_id = results.user.id;
@@ -105,8 +115,9 @@ module.exports = function (app) {
                 return res.send('An error occurred: '+ err);
             }
 
-            console.log("Successfully signed up " + req.body['email']);
-            res.render('manual-ignup');
+            var msg = "Successfully signed up " + req.body['email'];
+            console.log(msg);
+            res.render('manual-signup', {success: msg});
         });
 
     });
