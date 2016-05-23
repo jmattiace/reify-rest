@@ -11,6 +11,7 @@ app.environment = environment;
 appLoader.loadApp(app, 'middlewares');
 appLoader.loadApp(app, 'admin_controllers');
 appLoader.loadApp(app, 'controllers');
+appLoader.loadErrorHandler(app);
 servicesLoader.loadServices(app);
 
 var port = process.env.PORT || 3000;

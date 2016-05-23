@@ -15,15 +15,14 @@ module.exports = function (app) {
     /*
      * Renders page with given token used to find existing user
      */
-    app.get('/set-password/:token', function(req, res) {
+    app.get('/set-password/:token', function(req, res, next) {
         var query = {
             resetPasswordToken: req.params.token,
             resetPasswordExpires: { $gt: Date.now() }
         };
         app.models.User.findOne(query, function(err, user) {
             if (!user) {
-                console.log("Error occurred setting password") //TODO error handling
-                return res.send('Error occurred setting password');
+                return next('Reset password token expired. Reset your password on the "forgot password" page');
             }
             res.render('set-password', {
                 user: req.user
@@ -34,13 +33,16 @@ module.exports = function (app) {
     /*
      * Set's the password of a new user
      */
-    app.post('/set-password/:token', function (req, res) {
+    app.post('/set-password/:token', function (req, res, next) {
 
-        resetPassword(req.params.token, req.body.password);
+        resetPassword(req.params.token, req.body.password, function (err) {
+            if(err) {
+                //TODO Redirect to "forgot password" page
+                return next(err);
+            }
 
-        //TODO redirect to dashboard
-        res.send('Updated!');
-
+            //TODO redirect to dashboard
+        });
     });
 
     app.post('/forgot', function(req, res, next) {
@@ -98,7 +100,7 @@ module.exports = function (app) {
         res.redirect('/');
     });
 
-    function resetPassword(token, password) {
+    function resetPassword(token, password, callback) {
         async.waterfall([
             function(done) {
                 var query = {
@@ -107,8 +109,8 @@ module.exports = function (app) {
                 };
                 app.models.User.findOne(query, function(err, user) {
                     if (!user) {
-                        //TODO error handling
-                        return res.send('An error occurred when resetting password');
+                        //Error
+                        return done('Reset password token expired. Reset your password on the "forgot password" page', user);
                     }
 
                     user.password = password;
@@ -130,6 +132,9 @@ module.exports = function (app) {
                 done();
             }
         ], function(err) {
+            if(err) {
+               return callback(err);
+            }
             console.log('Updated!');
         });
     }
