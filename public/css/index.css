@@ -16,6 +16,23 @@
     padding: 0px;
 }
 
+html {
+    height: 100%;
+}
+
+p {
+    font-size: 1.5em;
+    font-family: "Proxima Nova";
+    letter-spacing: 0px;
+}
+
+body {
+    background-image: url('../assets/light-gray.png');
+    height:100%;
+}
+
+
+/************** Waitlist page ***********/
 #launchBox {
     left: 107px;
     bottom:80px;
@@ -80,7 +97,7 @@
     font-family:"Proxima Nova";
 }
 
-body{
+#waitlist-home-body{
     background-image: url('/assets/manHuge.png');
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -91,8 +108,35 @@ body{
     background-attachment: fixed;
 }
 
+
+/************** manual signup page ***********/
 #manual-signup-heading {
     font-size: 9.5em;
     font-family: TrumpGothicEast;
     color:#327b81;
+}
+
+
+/************** set password page ***********/
+#set-password-container {
+    background-image: url('../assets/patterns/crossword.png');
+    height: 85%;
+    min-height: 85%;
+}
+
+#set-password-body {
+    background-image: url('../assets/light-gray.png');
+    height:100%;
+}
+
+#set-password-logo {
+    font-size: 12.5em;
+    font-family: TrumpGothicEast;
+    color: #327b81;
+    letter-spacing: 6.17px;
+}
+
+#set-password-form {
+    background-color: #F6F7F7;
+    margin-top: 1.5em;
 }

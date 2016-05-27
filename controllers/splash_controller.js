@@ -13,13 +13,13 @@ module.exports = function (app) {
 
             return res.render('index',
                 {
-                    layout: 'main',
+                    layout: 'waitlist-home',
                     waitListRespMsg: respMsg
                 }
             );
         }
 
-        res.render('index');
+        res.render('index', { layout: 'waitlist-home'} );
     });
 
     app.get('/faq', function(req, res) {
