@@ -5,3 +5,4 @@ node_modules
 !.elasticbeanstalk/*.global.yml
 .idea/*
 npm-debug.log
+.DS_Store

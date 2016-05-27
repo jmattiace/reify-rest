@@ -100,6 +100,11 @@
             {{> input_text error=errors.chest value=values.chest }}
         </div>
         <div class="form-group">
+            <label for="torso">Torso:</label>
+            <input type="text" id="torso" name="torso" placeholder="Enter torso"
+            {{> input_text error=errors.torso value=values.torso }}
+        </div>
+        <div class="form-group">
             <label for="sleeve">Sleeve:</label>
             <input type="text" id="sleeve" name="sleeve" placeholder="Enter sleeve"
             {{> input_text error=errors.sleeve value=values.sleeve }}
@@ -141,6 +146,11 @@
                 <option>Slim</option>
                 <option>Skinny</option>
             </select>
+        </div>
+        <div class="form-group">
+            <label for="notes">Notes:</label>
+            <textarea rows="3" id="notes" name="notes" placeholder="Enter notes"
+            {{> input_text error=errors.notes value=values.notes }} </textarea>
         </div>
 
         <button type="submit" class="btn btn-default">Submit</button>

@@ -8,6 +8,7 @@ var MeasurementsSchema = new mongoose.Schema({
     neck:        { type: String },
     shoulder:    { type: String },
     chest:       { type: String },
+    torso:       { type: String },
     sleeve:      { type: String },
     shirt_fit_pref:   { type: String },
     waist:       { type: String },
@@ -15,6 +16,7 @@ var MeasurementsSchema = new mongoose.Schema({
     outseam:     { type: String },
     thigh:       { type: String },
     pant_fit_pref:   { type: String },
+    notes:       { type: String }
 });
 
 module.exports = MeasurementsSchema;

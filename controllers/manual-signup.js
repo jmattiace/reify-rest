@@ -44,13 +44,15 @@ module.exports = function (app) {
             'neck',
             'shoulder',
             'chest',
+            'torso',
             'sleeve',
             'shirt-fit-pref',
             'waist',
             'inseam',
             'outseam',
             'thigh',
-            'pant-fit-pref'
+            'pant-fit-pref',
+            'notes'
         ];
         _.each(measFields, function (field) {
             if (_.isEmpty(req.body[field])) {
@@ -99,6 +101,7 @@ module.exports = function (app) {
                 measData.neck = req.body['neck'];
                 measData.shoulder = req.body['shoulder'];
                 measData.chest = req.body['chest'];
+                measData.torso = req.body['torso'];
                 measData.sleeve = req.body['sleeve'];
                 measData.shirt_fit_pref = req.body['shirt-fit-pref'];
                 measData.waist = req.body['waist'];
@@ -106,6 +109,7 @@ module.exports = function (app) {
                 measData.outseam = req.body['outseam'];
                 measData.thigh = req.body['thigh'];
                 measData.pant_fit_pref = req.body['pant-fit-pref'];
+                measData.notes = req.body['notes'];
 
                 app.models.Measurements.create( measData, callback);
             }]
