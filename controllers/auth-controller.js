@@ -1,3 +1,7 @@
+/*
+ * Controller to handle authentication routes
+ */
+
 var async = require('async');
 var passport = require('passport');
 var _ = require('underscore');
@@ -22,10 +26,11 @@ module.exports = function (app) {
         };
         app.models.User.findOne(query, function(err, user) {
             if (!user) {
-                return next('Reset password token expired. Reset your password on the "forgot password" page');
+                return next('Set password token expired. Please reset your password on the "forgot password" page');
             }
             res.render('set-password', {
-                user: req.user
+                token: user.resetPasswordToken,
+                email: user.email
             });
         });
     });
@@ -35,13 +40,37 @@ module.exports = function (app) {
      */
     app.post('/set-password/:token', function (req, res, next) {
 
+        if(!req.body.password) {
+            return res.render('set-password', {
+                token: req.params.token,
+                email: req.body.email,
+                noPassword: true
+            });
+        }
         resetPassword(req.params.token, req.body.password, function (err) {
             if(err) {
                 //TODO Redirect to "forgot password" page
-                return next(err);
+                return res.send(err);
+                //return next(err);
             }
 
-            //TODO redirect to dashboard
+            //Login
+            passport.authenticate('local', function(err, user, info) {
+                if (err) {
+                    return next(err);
+                }
+                if (!user) {
+                    //TODO is this the right page to redirect to?
+                    return res.redirect('/login');
+                }
+                req.logIn(user, function(err) {
+                    if (err) {
+                        return next(err);
+                    }
+
+                    return res.redirect('/dashboard/orders');
+                });
+            })(req, res, next);
         });
     });
 
@@ -102,6 +131,7 @@ module.exports = function (app) {
 
     function resetPassword(token, password, callback) {
         async.waterfall([
+            //Set password for user with the given reset-password-token
             function(done) {
                 var query = {
                     resetPasswordToken: token,
@@ -118,15 +148,15 @@ module.exports = function (app) {
                     user.resetPasswordExpires = undefined;
 
                     user.save(function(err) {
-                        console.log("Successfully updated password");
-                        //req.logIn(user, function(err) {
-                        //    done(err, user);
-                        //});
-                        //TODO login user
+                        if(err) {
+                            //TODO redirect to same page
+                            return done('Could not save new password: ' + err);
+                        }
                         done(err, user);
                     });
                 });
             },
+            //Send notifcation email
             function(user, done) {
                 //TODO send notification email to user
                 done();
@@ -135,7 +165,8 @@ module.exports = function (app) {
             if(err) {
                return callback(err);
             }
-            console.log('Updated!');
+
+            return callback(null);
         });
     }
 
