@@ -49,8 +49,7 @@ module.exports = function (app) {
             'inseam',
             'outseam',
             'thigh',
-            'pant-fit-pref',
-            'notes'
+            'pant-fit-pref'
         ];
         _.each(measFields, function (field) {
             if (_.isEmpty(req.body[field])) {

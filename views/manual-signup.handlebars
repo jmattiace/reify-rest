@@ -140,7 +140,7 @@
         <div class="form-group">
             <label for="notes">Notes:</label>
             <textarea rows="3" id="notes" name="notes" placeholder="Enter notes"
-            {{> input_text error=errors.notes value=values.notes }} </textarea>
+                      class="form-control">{{#if values }} {{ values.notes }} {{/if}} </textarea>
         </div>
 
         <button type="submit" class="btn btn-default">Submit</button>
