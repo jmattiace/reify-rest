@@ -5,20 +5,22 @@ var bcrypt = require('bcrypt');
 var SALT_WORK_FACTOR = 10;
 
 var UserSchema = new mongoose.Schema({
-    firstName:   { type: String },
-    lastName:    { type: String },
-    phoneNumber: { type: String },
-    streetAddr1: { type: String },
-    streetAddr2: { type: String },
-    country:  { type: String, default: 'US' },
-    zip:  { type: String },
-    city:     { type: String },
-    state:    { type: String },
-    email:       { type: String, unique: true, lowercase: true },
-    password:    { type: String, required: true},
-    resetPasswordToken: { type: String},
-    resetPasswordExpires: { type: Date},
-    apiKey:      { type: String, unique: true, sparse: true}
+    firstName:              { type: String },
+    lastName:               { type: String },
+    phoneNumber:            { type: String },
+    streetAddr1:            { type: String },
+    streetAddr2:            { type: String },
+    country:                { type: String, default: 'US' },
+    zip:                    { type: String },
+    city:                   { type: String },
+    state:                  { type: String },
+    email:                  { type: String, unique: true, lowercase: true },
+    password:               { type: String},
+    resetPasswordToken:     { type: String},
+    resetPasswordExpires:   { type: Date},
+    apiKey:                 { type: String, unique: true, sparse: true},
+    measurements:           { type: mongoose.Schema.Types.ObjectId, ref: 'Measurements' },
+    orders:                 [{ type: mongoose.Schema.Types.ObjectId, ref: 'Order' }]
 });
 
 /**

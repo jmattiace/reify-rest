@@ -9,7 +9,7 @@ var app = express();
 app.environment = environment;
 
 appLoader.loadApp(app, 'middlewares');
-appLoader.loadApp(app, 'admin_controllers');
+appLoader.loadApp(app, 'controllers_admin');
 appLoader.loadApp(app, 'controllers');
 appLoader.loadErrorHandler(app);
 servicesLoader.loadServices(app);
