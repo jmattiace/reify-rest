@@ -154,6 +154,10 @@ body {
 
 
 /************** events page ***********/
+#container-date-time {
+    margin-top:-50px;
+}
+
 #events-title {
     font-size: 9.5em;
     font-family: TrumpGothicEast;
