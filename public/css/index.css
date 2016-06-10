@@ -159,6 +159,7 @@ body {
     font-family: TrumpGothicEast;
     color: #327b81;
     letter-spacing: 0.04em;
+    padding-top: 0.5em;
 }
 
 #event-date {
@@ -169,12 +170,6 @@ body {
 
 #event-time {
     font-size: 2.5em;
-}
-
-#boutique-crawl-jumbotron {
-    padding-bottom: 0%;
-    background-image: url('../assets/patterns/crossword.png');
-    background-size: cover;
 }
 
 #events-divider {
@@ -190,4 +185,3 @@ body {
     margin-top: 2em;
     margin-bottom: 4em;
 }
-
