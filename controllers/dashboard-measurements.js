@@ -35,7 +35,7 @@ module.exports = function (app) {
                     pant_fit_pref: user.measurements.pant_fit_pref
                 };
 
-                return res.render('dashboard/measurements', {layout: 'user-dashboard', values: measVals});
+                return res.render('dashboard/measurements', {layout: 'user-dashboard', values: measVals, firstName: user.firstName});
             });
 
     });
@@ -108,7 +108,7 @@ module.exports = function (app) {
                         console.log('Error updating measurement info for user ' + req.user.email + ': ' + err);
                     }
 
-                    return res.render('dashboard/measurements', {layout: 'user-dashboard', values: req.body });
+                    return res.render('dashboard/measurements', {layout: 'user-dashboard', values: measData });
                 });
             });
     });

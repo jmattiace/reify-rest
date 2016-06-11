@@ -29,7 +29,7 @@ module.exports = function (app) {
                 zip: user.zip
             };
 
-            return res.render('dashboard/account', { values: values });
+            return res.render('dashboard/account', {layout: 'user-dashboard', values: values });
         });
     });
 
@@ -50,7 +50,7 @@ module.exports = function (app) {
         });
 
         if (!_.isEmpty(errors)) {
-            return res.render('dashboard/account', { errors: errors, values: req.body });
+            return res.render('dashboard/account', {layout: 'user-dashboard', errors: errors, values: req.body });
         }
 
         var query = {
@@ -59,11 +59,11 @@ module.exports = function (app) {
         app.models.User.findOne(query, function(err, updatedUser) {
             if(err) {
                 console.log('Error updating account info for user ' + req.body.email + ': ' + err);
-                return res.render('dashboard/account', { values: req.body });
+                return res.render('dashboard/account', {layout: 'user-dashboard',  values: req.body });
             }
             if (!updatedUser) {
                 console.log('Error updating account info for user ' + req.body.email + '. Could not find user.');
-                return res.render('dashboard/account', { values: req.body });
+                return res.render('dashboard/account', {layout: 'user-dashboard',  values: req.body });
             }
 
             updatedUser.firstName = req.body['first-name'];
@@ -80,7 +80,7 @@ module.exports = function (app) {
                     console.log('Error updating account info for user ' + req.body.email + ': ' + err);
                 }
 
-                return res.render('dashboard/account', { values: updatedUser });
+                return res.render('dashboard/account', {layout: 'user-dashboard',  values: updatedUser });
             });
         });
     });

@@ -8,10 +8,13 @@ var _ = require('underscore');
 
 module.exports = function (app) {
     app.post('/login', passport.authenticate('web'), function (req, res) {
-        res.render('dashboard/account', {layout: 'user-dashboard'});
+        return res.redirect('/dashboard/account');
     });
 
     app.get('/login', function(req, res) {
+        if (req.user) {
+            return res.redirect('/dashboard/account');
+        }
         res.render('login', {layout: 'landing'});
     });
 

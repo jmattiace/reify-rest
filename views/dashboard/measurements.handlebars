@@ -4,7 +4,7 @@
         <div id ="jumbotron-registration" class="row">
 
             <div class="col-md-12">
-                <h1 id="jumbotron-measurement-headline">Your Measurements</h1>
+                <h1 class="text-capitalize" id="jumbotron-measurement-headline">{{ firstName }}'s Measurements</h1>
             </div>
         </div>
     </div>
@@ -17,68 +17,68 @@
 
                 <li class="list-group-item">
                     Height:
-                    <span class="label label-default label-pill pull-xs-right">14</span>
+                    <span class="label label-default label-pill pull-xs-right">{{ values.height }}</span>
 
                 </li>
 
                 <li class="list-group-item">
                     Weight:
-                    <span class="label label-default label-pill pull-xs-right">2</span>
+                    <span class="label label-default label-pill pull-xs-right">{{ values.weight }}</span>
                 </li>
 
                 <li class="list-group-item">
                     Neck:
-                    <span class="label label-default label-pill pull-xs-right">1</span>
+                    <span class="label label-default label-pill pull-xs-right">{{ values.neck }}</span>
                 </li>
 
                 <li class="list-group-item">
                     Shoulder:
-                    <span class="label label-default label-pill pull-xs-right">1</span>
+                    <span class="label label-default label-pill pull-xs-right">{{ values.shoulder }}</span>
                 </li>
 
                 <li class="list-group-item">
                     Chest:
-                    <span class="label label-default label-pill pull-xs-right">1</span>
+                    <span class="label label-default label-pill pull-xs-right">{{ values.chest }}</span>
                 </li>
 
                 <li class="list-group-item">
                     Torso:
-                    <span class="label label-default label-pill pull-xs-right">1</span>
+                    <span class="label label-default label-pill pull-xs-right">{{ values.torso }}</span>
                 </li>
 
                 <li class="list-group-item">
                     Sleeve:
-                    <span class="label label-default label-pill pull-xs-right">1</span>
+                    <span class="label label-default label-pill pull-xs-right">{{ values.sleeve }}</span>
                 </li>
 
                 <li class="list-group-item">
                     Waist:
-                    <span class="label label-default label-pill pull-xs-right">1</span>
+                    <span class="label label-default label-pill pull-xs-right">{{ values.waist }}</span>
                 </li>
 
                 <li class="list-group-item">
                     Inseam:
-                    <span class="label label-default label-pill pull-xs-right">1</span>
+                    <span class="label label-default label-pill pull-xs-right">{{ values.inseam }}</span>
                 </li>
 
                 <li class="list-group-item">
                     Outseam:
-                    <span class="label label-default label-pill pull-xs-right">1</span>
+                    <span class="label label-default label-pill pull-xs-right">{{ values.outseam }}</span>
                 </li>
 
                 <li class="list-group-item">
                     Thigh:
-                    <span class="label label-default label-pill pull-xs-right">1</span>
+                    <span class="label label-default label-pill pull-xs-right">{{ values.thigh }}</span>
                 </li>
 
                 <li class="list-group-item">
                     Shirt fit preference:
-                    <span class="label label-default label-pill pull-xs-right">Slim</span>
+                    <span class="label label-default label-pill pull-xs-right">{{ values.shirt_fit_pref }}</span>
                 </li>
 
                 <li class="list-group-item">
                     Pants fit preference:
-                    <span class="label label-default label-pill pull-xs-right">Slim</span>
+                    <span class="label label-default label-pill pull-xs-right">{{ values.pant_fit_pref }}</span>
                 </li>
 
             </ul>

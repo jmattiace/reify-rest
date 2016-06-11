@@ -7,7 +7,7 @@ module.exports = function (app) {
 
     app.get('/dashboard/orders', auth.ensureAuthenticated, function(req, res) {
 
-        return res.send('Dashboard - orders')
+        return res.render('dashboard/orders', {layout: 'user-dashboard'});
     });
 
     app.get('/dashboard/current_orders', auth.ensureAuthenticated, function (req, res) {

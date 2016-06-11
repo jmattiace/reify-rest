@@ -9,7 +9,7 @@
                 <p class="lead">
                 <div class="btn-group">
                     <a class="btn btn-dark btn-md" href="/login">Login</a>
-                    <button type="button" class="btn btn-dark btn-md" data-toggle="modal" data-target="#myModal">
+                    <button type="button" class="btn btn-dark btn-md" data-toggle="modal" data-target="#sign-up-modal">
                         Sign Up!
                     </button>
                 </div>
@@ -85,9 +85,34 @@
     <div class="text-vertical-center">
         <h1>First Alteration is Free!</h1>
         <div class="btn-group">
-            <button type="button" class="btn btn-dark btn-lg" data-toggle="modal" data-target="#myModal">
+            <button type="button" class="btn btn-dark btn-lg" data-toggle="modal" data-target="#sign-up-modal">
                 Sign Up!
             </button>
         </div>
     </div>
 </aside>
+
+<!-- Modal -->
+<div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title text-center" id="myModalLabel">How to sign up</h4>
+            </div>
+            <div class="modal-body">
+                <p><strong>We're stitching things together to get you towards your perfect fit.</strong></p>
+                <div class="text-center">
+                    <p>In the meantime, come to any of our <a href="/partners">partner boutiques</a> to get your body measurements put into our system</p>
+                    <p>OR</p>
+                    <p>Join our waitlist</p>
+                    <form role="form" class="form-inline" method="POST" action="/waitlist">
+                        <input class="form-control" type="email" id="waitlist-email" name="email" placeholder="Enter email" />
+                        <button type="submit" class="btn btn-default">Join!</button>
+                    </form>
+                </div>
+                <p>Once your body measurements are in our system, you'll be able to shop anywhere online with a guaranteed perfect fit.</p>
+            </div>
+        </div>
+    </div>
+</div>
