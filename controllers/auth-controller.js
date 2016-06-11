@@ -7,8 +7,12 @@ var passport = require('passport');
 var _ = require('underscore');
 
 module.exports = function (app) {
-    app.post('/login', passport.authenticate('local'), function (req, res) {
-        res.send(req.user);
+    app.post('/login', passport.authenticate('web'), function (req, res) {
+        res.render('dashboard/account', {layout: 'user-dashboard'});
+    });
+
+    app.get('/login', function(req, res) {
+        res.render('login', {layout: 'landing'});
     });
 
     app.get('/logout', function(req, res) {

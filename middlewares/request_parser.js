@@ -75,17 +75,17 @@ module.exports = function (app) {
             }
 
             var errors = {
-                email: 'email and password are not correct',
-                password: 'email password are not correct'
+                email: 'Email and password are not correct',
+                password: 'Email and password are not correct'
             };
 
             if (!user) {
-                return req.res.render('dashboard/login', { errors: errors, values: { email: email, password: '' } });
+                return req.res.render('login', { errors: errors, values: { email: email, password: '' } });
             }
 
             app.services.authService.isPasswordCorrect(user.get('password'), password, function (err) {
                 if (err) {
-                    return req.res.render('dashboard/login', { errors: errors, values: { email: email, password: '' } });
+                    return req.res.render('login', { errors: errors, values: { email: email, password: '' } });
                 }
 
                 return done(null, user);

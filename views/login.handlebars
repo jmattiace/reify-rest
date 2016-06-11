@@ -1,0 +1,40 @@
+<div class="container text-center" id="set-password-container">
+    <p id="set-password-logo">REIFY</p>
+
+    <div class="col-md-8 col-md-offset-2" id="set-password-desc">
+        <p> Make your perfect fit a reality</p>
+    </div>
+
+    <div class="panel panel-default col-md-4 col-md-offset-4" id="set-password-form">
+        <div class="panel-body">
+            <form role="form-horizontal" method="POST" action="/login" >
+
+
+                <div class="form-group">
+                    {{#if errors }}
+                        <p class="text-danger">Email and/or password is not correct</p>
+                        <input type="text" class="form-control alert-danger" name="email" id="email" value="{{ values.email }}" placeholder="Email">
+                    {{ else }}
+                        <p class="form-control-static" >Login here</p>
+                        <input type="text" class="form-control" name="email" id="email" value="{{ values.email }}" placeholder="Email">
+                    {{/if}}
+                </div>
+                <div class="form-group">
+
+                    <div >
+                        {{#if errors }}
+                            <input type="password" class="form-control alert-danger" name="password" id="pwd" placeholder="Enter password">
+                        {{ else }}
+                            <input type="password" class="form-control" name="password" id="pwd" placeholder="Enter password">
+                        {{/if}}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div >
+                        <button type="submit" class="btn btn-default btn-block" >Login</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
