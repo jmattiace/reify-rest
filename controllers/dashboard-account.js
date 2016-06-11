@@ -22,11 +22,11 @@ module.exports = function (app) {
                 lastName: user.lastName,
                 email: user.email,
                 phoneNumber: user.phoneNumber,
-                addr1: user.streetAddr1,
-                addr2: user.streetAddr2,
+                streetAddr1: user.streetAddr1,
+                streetAddr2: user.streetAddr2,
                 city: user.city,
                 state: user.state,
-                zipCode: user.zip
+                zip: user.zip
             };
 
             return res.render('dashboard/account', { values: values });
@@ -80,7 +80,7 @@ module.exports = function (app) {
                     console.log('Error updating account info for user ' + req.body.email + ': ' + err);
                 }
 
-                return res.render('dashboard/account', { values: req.body });
+                return res.render('dashboard/account', { values: updatedUser });
             });
         });
     });

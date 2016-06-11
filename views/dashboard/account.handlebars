@@ -1,65 +1,43 @@
-<nav class="navbar">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">
-                <p>REIFY</p>
-            </a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="#">Orders</a></li>
-                <li><a href="#">Measurements</a></li>
-                <li><a href="#">Account</a></li>
-                <li><a href="#">Logout</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
 <div class="container text-center">
     <h1>Jason's Account</h1>
 
-    <form role="form" method="POST" action="#" >
+    <form role="form" method="POST" action="/dashboard/account" >
         <div class="form-group">
             <div class="col-md-6">
-                <input class="form-control" id="first-name" type="text" placeholder="First name" value={{ values.firstName }}>
+                <input class="form-control" id="first-name" name="first-name" type="text" placeholder="First name" value={{ values.firstName }}>
             </div>
             <div class="col-md-6">
-                <input class="form-control" id="last-name" type="text" placeholder="Last name" value={{ values.lastName }}>
+                <input class="form-control" id="last-name" name="last-name" type="text" placeholder="Last name" value={{ values.lastName }}>
             </div>
         </div>
         <div class="form-group">
             <div class="col-md-6">
-                <input class="form-control" id="email" type="email" placeholder="Email" value={{ values.email }}>
+                <input class="form-control" id="email" name="email" type="email" placeholder="Email" value={{ values.email }}>
             </div>
             <div class="col-md-6">
-                <input class="form-control" id="phone" type="text" placeholder="Phone number" value={{ values.phoneNumber }}>
+                <input class="form-control" id="phone-number" name="phone-number" type="text" placeholder="Phone number" value={{ values.phoneNumber }}>
             </div>
         </div>
         <div class="form-group">
             <div class="col-md-6">
-                <input class="form-control" id="addr1" type="text" placeholder="Address 1" value={{ values.addr1 }}>
+                <input class="form-control" id="addr1" name="addr1" type="text" placeholder="Address 1" value={{ values.streetAddr1 }}>
             </div>
             <div class="col-md-6">
-                <input class="form-control" id="addr2" type="text" placeholder="Address 2" value={{ values.addr2 }}>
+                <input class="form-control" id="addr2"  name="addr2" type="text" placeholder="Address 2" value={{ values.streetAddr2 }}>
             </div>
         </div>
         <div class="form-group">
             <div class="col-md-4">
-                <input class="form-control" id="city" type="text" placeholder="City" value={{ values.city }}>
+                <input class="form-control" id="city" name="city" type="text" placeholder="City" value={{ values.city }}>
             </div>
             <div class="col-md-4">
-                <input class="form-control" id="state" type="text" placeholder="State" value={{ values.state }}>
+                <input class="form-control" id="state" name="state" type="text" placeholder="State" value={{ values.state }}>
             </div>
             <div class="col-md-4">
-                <input class="form-control" id="zip" type="text" placeholder="Zip code" value={{ values.zipCode }}>
+                <input class="form-control" id="zip" name="zip" type="text" placeholder="Zip code" value={{ values.zip }}>
             </div>
         </div>
+        <button type="submit" class="btn btn-default">Update</button>
     </form>
 
 </div>

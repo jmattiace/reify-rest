@@ -35,7 +35,7 @@ module.exports = function (app) {
                     pant_fit_pref: user.measurements.pant_fit_pref
                 };
 
-                return res.render('dashboard/measurements', {values: measVals});
+                return res.render('dashboard/measurements', {layout: 'user-dashboard', values: measVals});
             });
 
     });
@@ -66,7 +66,7 @@ module.exports = function (app) {
         });
 
         if (!_.isEmpty(errors)) {
-            return res.render('dashboard/measurements', { errors: errors, values: req.body });
+            return res.render('dashboard/measurements', {layout: 'user-dashboard', errors: errors, values: req.body });
         }
 
         var query = {
@@ -77,11 +77,11 @@ module.exports = function (app) {
             .exec(function(err, user) {
                 if (err) {
                     console.log('Error updating measurement info for user ' + req.user.email + ': ' + err);
-                    return res.render('dashboard/measurements', {values: req.body});
+                    return res.render('dashboard/measurements', {layout: 'user-dashboard', values: req.body});
                 }
                 if (!user) {
                     console.log('Error updating measurement info for user ' + req.user.email + '. Could not find user.');
-                    return res.render('dashboard/account', {values: req.body});
+                    return res.render('dashboard/account', {layout: 'user-dashboard', values: req.body});
                 }
 
                 //Save new measurement data
@@ -108,7 +108,7 @@ module.exports = function (app) {
                         console.log('Error updating measurement info for user ' + req.user.email + ': ' + err);
                     }
 
-                    return res.render('dashboard/measurements', { values: req.body });
+                    return res.render('dashboard/measurements', {layout: 'user-dashboard', values: req.body });
                 });
             });
     });

@@ -68,7 +68,7 @@ module.exports = function (app) {
                         return next(err);
                     }
 
-                    return res.redirect('/dashboard/orders');
+                    return res.redirect('/dashboard/account');
                 });
             })(req, res, next);
         });

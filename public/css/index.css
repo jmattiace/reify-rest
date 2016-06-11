@@ -13,6 +13,8 @@
     url("https://db.onlinewebfonts.com/t/ac51ad8a36d5bab6da11d454bcd06561.ttf") format("truetype"),
     url("https://db.onlinewebfonts.com/t/ac51ad8a36d5bab6da11d454bcd06561.svg#Proxima Nova") format("svg");
 }
+
+/************* Generic styling ************************************/
 .container-fluid {
     padding: 0px;
 }
@@ -41,6 +43,38 @@ body {
     letter-spacing: 2px;
     font-size: 2.5em;
     color: #327b81;
+}
+
+.text-vertical-center {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.btn-dark {
+    border-radius: 0;
+    color: #fff;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.btn-dark:hover,
+.btn-dark:focus,
+.btn-dark:active {
+    color: #fff;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.btn-light {
+    border-radius: 0;
+    color: #333;
+    background-color: rgb(255,255,255);
+}
+
+.btn-light:hover,
+.btn-light:focus,
+.btn-light:active {
+    color: #333;
+    background-color: rgba(255,255,255,0.8);
 }
 
 /************** Waitlist page ***********/
@@ -188,4 +222,99 @@ body {
 #boutique-crawl-details {
     margin-top: 2em;
     margin-bottom: 4em;
+}
+
+
+/************** splash page ***********/
+#jumbopic {
+    background-image: url('../assets/img/manHuge.png');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 100% 50%;
+    background-attachment: scroll;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+#jumbotron-registration {
+    margin-top:140px;
+}
+
+#container-signup {
+    text-align: center;
+}
+
+#callout-section {
+    display: table;
+    width: 100%;
+    height: 400px;
+    color: #fff;
+    background: url("../assets/img/callout.jpg") no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.reify-info-icon {
+    width:25%;
+    height: 25%;
+}
+
+#reify-info {
+    padding: 100px 50px;
+}
+
+.reify-info-item {
+    margin-bottom: 30px;
+    padding:20px 20px;
+    color:#327b81;
+    font-family: "Proxima Nova";
+}
+
+#reify-info-hr {
+    border: 1px solid #327b81;
+}
+
+#reify-logo {
+    text-align: center;
+    font-size: 12.5em;
+    font-family: TrumpGothicEast;
+    color:#327b81;
+    letter-spacing:6.17px;
+}
+
+#tag-line {
+    text-align: center;
+    font-size: 1.5em;
+    position: relative;
+    font-family: "Proxima Nova";
+    color:#327b81;
+    letter-spacing:2.17px;
+    top:-25px;
+}
+
+/********************* Measurements page **********************/
+#measurement-jumbopic {
+    background-image: url('../assets/img/callout.jpg');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 100% 50%;
+    background-attachment: scroll;
+    width: 100%;
+    height: 60%;
+    text-align: center;
+}
+
+#jumbotron-measurement-headline {
+    color:white;
+    font-family:"Proxima Nova";
+    font-size: 4em;
 }

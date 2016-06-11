@@ -1,7 +1,7 @@
 module.exports = function (app) {
     app.get('/', function (req, res) {
 
-        //Check if req came from waitlist response
+/*        //Check if req came from waitlist response
         if(req.query.waitListed) {
             var respMsg = '';
             if(req.query.waitListed == 'true') {
@@ -18,8 +18,8 @@ module.exports = function (app) {
                 }
             );
         }
-
-        res.render('index', { layout: 'waitlist-home'} );
+*/
+        res.render('splash', { layout: 'landing'} );
     });
 
     app.get('/faq', function(req, res) {
